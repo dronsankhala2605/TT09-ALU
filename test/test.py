@@ -23,7 +23,7 @@ async def test_alu(dut):
     assert dut.uo_out.value == 15, f"Addition failed: {dut.uo_out.value} != 15"
 
     # Test case: Subtraction (Opcode 001)
-    dut.ui_in.value = 0x21  # A = 2 (binary: 0010), B = 1 (binary: 0001)
+    dut.ui_in.value = 0x02  # A = 2 (binary: 0010), B = 1 (binary: 0001)
     dut.uio_in.value = 0x01  # Opcode = 001 (Subtraction)
     await RisingEdge(dut.clk)
     assert dut.uo_out.value == 1, f"Subtraction failed: {dut.uo_out.value} != 1"
