@@ -34,7 +34,7 @@ module tb ();
     #10 ena = 1;   // Enable after 20ns
   end
 
-  // Instantiate your ALU module
+  // ALU module
   tt_um_alf19185_ALU uut (
 `ifdef GL_TEST
       .VPWR(1'b1),
