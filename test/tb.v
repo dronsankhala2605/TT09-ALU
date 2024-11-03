@@ -3,6 +3,10 @@
 
 module tb ();
 
+  // Declare continuous signals for power and ground
+  wire VPWR = 1'b1;  // Power supply
+  wire VGND = 1'b0;  // Ground
+
   // Dump the signals to a VCD file. You can view it with gtkwave.
   initial begin
     $dumpfile("tb.vcd");
@@ -34,11 +38,11 @@ module tb ();
     #10 ena = 1;   // Enable after 20ns
   end
 
-  // ALU module
+  // Instantiate your ALU module
   tt_um_alf19185_ALU U1 (
 `ifdef GL_TEST
-      .VPWR(1'b1),
-      .VGND(1'b0),
+      .VPWR(VPWR),  // Connect to power using wire
+      .VGND(VGND),  // Connect to ground using wire
 `endif
       .ui_in  (ui_in),
       .uo_out (uo_out),
@@ -51,4 +55,3 @@ module tb ();
   );
 
 endmodule
-
