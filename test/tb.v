@@ -35,7 +35,7 @@ module tb ();
   end
 
   // ALU module
-  tt_um_alf19185_ALU uut (
+  tt_um_alf19185_ALU U1 (
 `ifdef GL_TEST
       .VPWR(1'b1),
       .VGND(1'b0),
